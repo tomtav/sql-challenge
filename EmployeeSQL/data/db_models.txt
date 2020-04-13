@@ -1,0 +1,47 @@
+# Employees Table
+Employees # contains all company employees
+-
+emp_no PK INT # employee unique identifier as primary key
+birth_date DATE # employee date of birth
+first_name VARCHAR(45) INDEX # employee first name
+last_name VARCHAR(60) INDEX # employee last name
+gender VARCHAR(1) # employee gender designation
+hire_date DATE # employee date of hire
+
+# Departments Table
+Departments # contains all departments 
+-
+dept_no PK VARCHAR(4) # department unique identifier
+dept_name VARCHAR(60) # department name
+
+# Department and Employee Junction Table
+Dept_Emp # contains the relationship between which department the employee belongs to
+-
+emp_no INT FK >- Employees.emp_no # employee id as a foreign key
+dept_no VARCHAR(4) FK >- Departments.dept_no # department id as a foreign key
+from_date DATE # date the employee started working for the department
+to_date DATE # date the employee no longer worked for the department
+
+# Department Manager Junction Table
+Dept_Manager # contains the relationship between employee and  the department they manage
+----
+dept_no VARCHAR(4) FK >- Departments.dept_no # department id as a foreign key
+emp_no INT FK >- Employees.emp_no # employee id as a foreign key
+from_date DATE # date employee started managing the department
+to_date DATE # date employee stopped managing the department
+
+# Employee Salaries Junction Table
+Salaries # contains the relationship between an employee and their salary
+------------
+emp_no INT FK >- Employees.emp_no # employee id as a foreign key
+salary NUMERIC # salary for the employee id
+from_date DATE # date employee began receiving this salary
+to_date DATE # date employee stopped receiving this salary
+
+# Employee Title Junction Table
+Titles # contains the relationship beteween the employee and their title
+------------
+emp_no INT FK >- Employees.emp_no # employee id as a foreign key
+title VARCHAR(255) # employee title
+from_date DATE # date employee started using this title
+to_date DATE # date employee stopped using this title
