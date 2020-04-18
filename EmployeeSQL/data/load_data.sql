@@ -4,7 +4,7 @@ COPY departments FROM 'departments.csv' DELIMITER ',' CSV HEADER;
 COPY dept_emp FROM 'dept_emp.csv' DELIMITER ',' CSV HEADER;
 COPY dept_manager FROM 'dept_manager.csv' DELIMITER ',' CSV HEADER;
 COPY salaries FROM 'salaries.csv' DELIMITER ',' CSV HEADER;
-COPY titles FROM 'titles.csv' DELIMITER ',' CSV HEADER;
+COPY titles(emp_no,title,from_date,to_date) FROM 'titles.csv' DELIMITER ',' CSV HEADER;
 
 select * from employees;
 select * from departments;
