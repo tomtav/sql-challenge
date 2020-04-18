@@ -16,7 +16,7 @@ My responsibilites for this project were to perform the following tasks:
 
 2. Data Engineering
 
-   * [Databse Schema File](EmployeeSQL/schema.sql)
+   * [Database Schema File](EmployeeSQL/schema.sql)
    * [Data Load File](EmployeeSQL/data/load_data.sql)
 
 3. Data Analysis
